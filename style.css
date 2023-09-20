@@ -1,20 +1,24 @@
-@import url('https://fonts.googleapis.com/css?Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?Muli&display=swap');
 
 * {
     /* padding and border wont effect width */
     box-sizing: border-box;
+    --backgroundColor: #2f3543;
+    --textColor: #fff;
+    --secondaryColor: #828384;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Muli', sans-serif;
     background-color: #333;
     color: #222;
     overflow-x: hidden;
     margin: 0;
 }
 
+
 .container {
-    background-color: #fafafa;
+    background-color: var(--backgroundColor);
     transform-origin: top left;
     transition: transform 0.5s linear;
     width: 100vw;
@@ -34,13 +38,18 @@ body {
 }
 
 .circle {
-    background-color: #ff7979;
+    background-color: var(--secondaryColor);
     height: 200px;
     width: 200px;
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s linear;
 }
+
+.circle:hover {
+    transform: scale(1.2);
+}
+
 
 .container.show-nav .circle {
     transform: rotate(-70deg);
@@ -65,7 +74,8 @@ body {
 
 .circle button#open {
     left: 60%;
-
+    transition-property: transform, rotate;
+    transition-duration: 0.4s;
 }
 
 .circle button#close {
@@ -96,7 +106,7 @@ nav ul {
 nav ul li {
     text-transform: uppercase;
     color: #fff;
-    margin: 40px 0;
+    margin: 80px 0;
     transform: translateX(-100%);
     transition: transform 0.4s ease-in;
 }
@@ -117,14 +127,25 @@ nav ul li+li+li {
     transform: translateX(-200%);
 }
 
+.navLink {
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.navLink:hover {
+    color: var(--secondaryColor);
+}
+
 img {
     max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--secondaryColor);
 }
 
 .content {
     max-width: 1000px;
     margin: 50px auto;
-
+    color: var(--textColor)
 }
 
 .content h1 {
@@ -132,12 +153,10 @@ img {
 }
 
 .content small {
-    color: #555;
     font-style: italic;
 
 }
 
 .content p {
-    color: #333;
     line-height: 1.5;
 }
