@@ -43,11 +43,13 @@ body {
     width: 200px;
     border-radius: 50%;
     position: relative;
-    transition: transform 0.5s linear;
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
 }
 
 .circle:hover {
-    transform: scale(1.2);
+    /* transform: scale(1.1); */
+    box-shadow: 0 0 5px 5px #ecff15;
 }
 
 
@@ -82,11 +84,12 @@ body {
     top: 60%;
     transform: rotate(90deg);
     transform-origin: top left;
+
 }
 
 .container.show-nav+nav li {
     transform: translateX(0);
-    transition-delay: 0.3s;
+    transition-delay: 0.4s;
 }
 
 nav {
@@ -139,7 +142,7 @@ nav ul li+li+li {
 img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 3px 3px 5px var(--secondaryColor);
+    box-shadow: 3px 3px 3px var(--secondaryColor);
 }
 
 .content {
